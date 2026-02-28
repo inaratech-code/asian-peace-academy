@@ -46,7 +46,7 @@ A premium academy website built with Next.js 14 (App Router), TypeScript, Tailwi
 
 1. Push to GitHub and import in Vercel.
 2. Set env vars: `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `JWT_SECRET`.
-3. Note: JSON files in `/data` are read/written at build and runtime; for persistent edits on Vercel you’d typically switch to a database or Vercel KV.
+3. Note: JSON files in `/data` are read/written at build and runtime; for persistent edits on Vercel you'd typically switch to a database or Vercel KV.
 
 ## Scripts
 
