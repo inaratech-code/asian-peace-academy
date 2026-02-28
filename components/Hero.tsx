@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 
 const slideCount = 3;
 
+/** Cubic bezier tuple for Framer Motion ease (avoids number[] inference) */
+const easeOutExpo: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 const container = {
   hidden: { opacity: 0 },
   visible: {
@@ -21,7 +24,7 @@ const item = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.85, ease: easeOutExpo },
   },
 };
 
@@ -30,7 +33,7 @@ const scrollHint = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.6, delay: 0.9, ease: easeOutExpo },
   },
 };
 
