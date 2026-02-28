@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 
-const easeOut = [0.22, 1, 0.36, 1];
+/** Cubic bezier tuple for Framer Motion (avoids number[] type error) */
+const easeOut: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 /** Single element: fades in and moves up when it enters the viewport (Cherrapunji-style section reveal) */
 export function ScrollReveal({
