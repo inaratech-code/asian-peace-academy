@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Asian Peace & Leadership Academy
 
-## Getting Started
+A premium academy website built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and Framer Motion. Content is managed via local JSON files and an admin panel with JWT authentication.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Install dependencies**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Environment variables**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   Copy `.env.example` to `.env.local` and set:
 
-## Learn More
+   - `ADMIN_USERNAME` – admin login username (default: admin)
+   - `ADMIN_PASSWORD` – admin login password (default: admin123)
+   - `JWT_SECRET` – secret for JWT signing (use a long random string in production)
 
-To learn more about Next.js, take a look at the following resources:
+3. **Run development server**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Open [http://localhost:3000](http://localhost:3000). Admin panel: [http://localhost:3000/admin](http://localhost:3000/admin) (login with credentials from `.env.local`).
 
-## Deploy on Vercel
+## Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **`/app`** – App Router pages and API routes
+- **`/app/(site)`** – Public pages (Home, About, Programs, Apply, Blog, Contact) with shared layout
+- **`/app/admin`** – Protected admin dashboard (content, programs, blog CRUD)
+- **`/components`** – Reusable UI (Navbar, Footer, Hero, ProgramCard, BlogCard, etc.)
+- **`/data`** – JSON CMS: `content.json`, `programs.json`, `blog.json`
+- **`/lib`** – `auth.ts` (JWT), `fileHandler.ts` (read/write JSON)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+
+- **Public site**: Hero, about preview, programs grid, testimonials, blog, CTA, apply form, contact form
+- **Admin**: Login (JWT cookie), edit homepage content, add/edit/delete programs and blog posts
+- **Design**: White + soft blue palette, Framer Motion animations, responsive, Inter font
+- **SEO**: Metadata API, semantic HTML
+
+## Deploy (Vercel)
+
+1. Push to GitHub and import in Vercel.
+2. Set env vars: `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `JWT_SECRET`.
+3. Note: JSON files in `/data` are read/written at build and runtime; for persistent edits on Vercel you’d typically switch to a database or Vercel KV.
+
+## Scripts
+
+- `npm run dev` – Development server
+- `npm run build` – Production build
+- `npm run start` – Start production server
+- `npm run lint` – Run ESLint

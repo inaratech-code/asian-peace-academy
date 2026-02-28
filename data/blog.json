@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "slug": "capacity-building-programme",
+      "title": "Capacity Building programme",
+      "excerpt": "Asian Academy for Peace, Research and Development orgnized training for staffs and alliance partner of Mahila Shakti Bikas Kendra in Kathmandu",
+      "content": "Asian Academy for Peace, Research and Development orgnized training for staffs and alliance partner of Mahila Shakti Bikas Kendra in Kathmandu.",
+      "image": "",
+      "author": "",
+      "authorRole": "",
+      "publishedAt": "2024-01-15",
+      "category": "Blog"
+    },
+    {
+      "id": "2",
+      "slug": "participation-in-asian-peace-builders-forum-2017",
+      "title": "Participation in Asian peace builders Forum 2017",
+      "excerpt": "Asian Peace Academy participated in the Asian peace builders Forum 2017.",
+      "content": "Asian Peace Academy participated in the Asian peace builders Forum 2017.",
+      "image": "",
+      "author": "",
+      "authorRole": "",
+      "publishedAt": "2024-01-10",
+      "category": "Blog"
+    },
+    {
+      "id": "3",
+      "slug": "vacancy-announcement",
+      "title": "Vacancy Announcement",
+      "excerpt": "Current vacancy announcements from Asian Peace Academy.",
+      "content": "Current vacancy announcements from Asian Peace Academy.",
+      "image": "",
+      "author": "",
+      "authorRole": "",
+      "publishedAt": "2024-02-01",
+      "category": "Blog"
+    },
+    {
+      "id": "4",
+      "slug": "expression-of-interest-for-research",
+      "title": "Expression of interest for Research",
+      "excerpt": "Expression of interest for Research at Asian Peace Academy.",
+      "content": "Expression of interest for Research at Asian Peace Academy.",
+      "image": "",
+      "author": "",
+      "authorRole": "",
+      "publishedAt": "2024-01-28",
+      "category": "Blog"
+    }
+  ]
+}

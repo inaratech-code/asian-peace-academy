@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "headline": "Asian Peace Academy",
+    "subtitle": "For Peace Research and Development.",
+    "primaryCta": "Apply Now",
+    "secondaryCta": "View Programs"
+  },
+  "aboutPreview": {
+    "title": "Our Purpose",
+    "description": "",
+    "ctaText": "Learn More About Us"
+  },
+  "about": {
+    "intro": "The organisation is govern by a eleven members board of directors, all of them have distinguished and accomplished career history in terms of contributing to social wellbeing in the country. The day to day function of the organization is managed by a full-time executive director who directly reports to the board. An advisory committee which is consisted of national and international experts in the field of peacebuilding and development provide necessary advice to the executive board, particularly in developing organisational strategy and plans to translate the strategies into action.",
+    "pillars": [
+      {
+        "title": "Knowledge Generation",
+        "body": "Asian Peace Academy has been working in the area of knowledge generation. It believes local knowledge and practices for Peacebuilding and development is rich and it has not yet been dig out and contributed to the academic world. It has a research as key pillar for the knowledge generation. There are many research and publications working for and with many national and international organizations on different issues. The organization has enough human resource to take care of the research work."
+      },
+      {
+        "title": "Capacity Development",
+        "body": "The organization since its inception was able to build capacity of different civil society organizations. With the strong team of facilitators, training designer and management, it has build the capacity of civil society organizations in the areas of – Peacebuilding and Conflict Transformation – New deal principle and SDGs – Result Based Management – Leadership and Effective – Public Speaking – Organizational Governance and Management – Advocacy – Nonviolence Movement and Nonviolence"
+      },
+      {
+        "title": "Linking Practice, Policy and Academia",
+        "body": "Asian Peace Academy has been implementing project to establish social cohesion and social harmony in the divided community in different districts of Nepal. Asian Peace Academy wish to use knowledge gained in Peacebuilding, and development implementing project at the community and use link the knowledge gained in the community to policy and academia. The access of the organization is in all provinces either in project implementation, research or technical support to the civil society organizations."
+      }
+    ],
+    "team": [
+      { "name": "Ms. Rita Shrestha", "role": "Chairperson", "slug": "ms-rita-shrestha" },
+      { "name": "Mr. Sharad C Neupane", "role": "Executive Director", "slug": "mr-sharad-c-neupane" },
+      { "name": "Ms. Hemlata Rai", "role": "Director", "slug": "ms-hemlata-rai" },
+      { "name": "Mr. Rabindra Bhattarai", "role": "Director", "slug": "rabindra-bhattarai" },
+      { "name": "Mr. Kuber Niraula", "role": "Director", "slug": "kuber-niraula" },
+      { "name": "Dr. DB Subedi", "role": "Director", "slug": "db-subedi" },
+      { "name": "Mr. Prabesh Raj Joshi", "role": "Director", "slug": "prabeshrajjoshi" },
+      { "name": "Dr. Mukti Suvedi", "role": "Director", "slug": "mukti-suvedi" },
+      { "name": "Ms. Seema Luitel", "role": "Director", "slug": "seema-luitel" },
+      { "name": "Ms Rita Khatiwada", "role": "Director", "slug": "ms-rita-khatiwada-2" },
+      { "name": "Mr Sanjaya Gupta", "role": "Director", "slug": "mr-sanjay-gupta1" }
+    ]
+  },
+  "testimonials": [],
+  "ctaSection": {}
+}

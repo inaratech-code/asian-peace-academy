@@ -1,0 +1,44 @@
+{
+  "programs": [
+    {
+      "id": "1",
+      "title": "Executive Leadership in Peace & Dialogue",
+      "slug": "executive-leadership-peace-dialogue",
+      "duration": "6 months",
+      "format": "Hybrid",
+      "description": "An intensive program for senior practitioners and policymakers. Focus on strategic leadership, high-level mediation, and designing peace initiatives at scale.",
+      "highlights": ["Strategic leadership", "High-level mediation", "Policy design", "Cohort of 25"],
+      "ctaText": "Learn More"
+    },
+    {
+      "id": "2",
+      "title": "Youth Peace Fellowship",
+      "slug": "youth-peace-fellowship",
+      "duration": "12 months",
+      "format": "Residential + Online",
+      "description": "For emerging leaders under 35. Combines residential workshops, mentorship, and project-based learning to build practical skills in dialogue and community engagement.",
+      "highlights": ["Mentorship", "Project grants", "Regional network", "Certificate"],
+      "ctaText": "Learn More"
+    },
+    {
+      "id": "3",
+      "title": "Mediation & Negotiation Intensive",
+      "slug": "mediation-negotiation-intensive",
+      "duration": "3 weeks",
+      "format": "Residential",
+      "description": "Hands-on training in mediation and negotiation techniques. Suitable for diplomats, NGO staff, and professionals working in conflict-affected contexts.",
+      "highlights": ["Simulation-based", "Expert facilitators", "Case studies", "Small cohort"],
+      "ctaText": "Learn More"
+    },
+    {
+      "id": "4",
+      "title": "Women in Peace & Security",
+      "slug": "women-peace-security",
+      "duration": "4 months",
+      "format": "Online",
+      "description": "Designed to strengthen the role of women in peace processes. Covers WPS frameworks, advocacy, and leadership in multilateral and community settings.",
+      "highlights": ["WPS frameworks", "Advocacy skills", "Peer learning", "Flexible schedule"],
+      "ctaText": "Learn More"
+    }
+  ]
+}
