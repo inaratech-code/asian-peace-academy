@@ -16,6 +16,15 @@ export async function readJsonFile<T>(filename: string): Promise<T> {
   }
 }
 
+/** Safe read: returns fallback if file is missing or invalid (e.g. in some deploy environments). */
+export async function readJsonFileSafe<T>(filename: string, fallback: T): Promise<T> {
+  try {
+    return await readJsonFile<T>(filename);
+  } catch {
+    return fallback;
+  }
+}
+
 export async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
   const filePath = path.join(DATA_DIR, filename);
   await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");

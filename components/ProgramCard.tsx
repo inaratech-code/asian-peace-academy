@@ -30,7 +30,7 @@ export function ProgramCard({
       viewport={{ once: true }}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
-      className="group relative rounded-2xl border border-slate-200 bg-white p-8 shadow-card transition-shadow hover:shadow-glow hover:border-primary-200"
+      className="group relative rounded-2xl border border-slate-200 bg-white p-5 sm:p-8 shadow-card transition-shadow hover:shadow-glow hover:border-primary-200"
     >
       <div className="flex flex-col h-full">
         <div className="mb-4 flex flex-wrap gap-2">

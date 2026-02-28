@@ -1,4 +1,4 @@
-import { readJsonFile } from "@/lib/fileHandler";
+import { readJsonFileSafe } from "@/lib/fileHandler";
 import type { Metadata } from "next";
 import { BlogList } from "@/components/BlogList";
 
@@ -15,7 +15,8 @@ interface BlogPost {
 }
 
 export default async function BlogPage() {
-  const { posts } = await readJsonFile<{ posts: BlogPost[] }>("blog.json");
+  const data = await readJsonFileSafe<{ posts?: BlogPost[] }>("blog.json", { posts: [] });
+  const posts = Array.isArray(data.posts) ? data.posts : [];
 
   return (
     <main>

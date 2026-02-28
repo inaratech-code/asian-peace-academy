@@ -37,7 +37,17 @@ const scrollHint = {
   },
 };
 
-export function Hero() {
+const defaultHeadline = "ASIAN ACADEMY";
+const defaultTagline = "For Peace Research and Development";
+const defaultDescription = "Building capacity for peacebuilding, research, and sustainable development across Nepal and the region.";
+
+interface HeroProps {
+  headline?: string | null;
+  tagline?: string | null;
+  description?: string | null;
+}
+
+export function Hero({ headline, tagline, description }: HeroProps = {}) {
   const [current, setCurrent] = useState(0);
 
   function next() {
@@ -47,37 +57,41 @@ export function Hero() {
     setCurrent((c) => (c - 1 + slideCount) % slideCount);
   }
 
+  const displayHeadline = (headline ?? defaultHeadline).trim() || defaultHeadline;
+  const displayTagline = (tagline ?? defaultTagline).trim() || defaultTagline;
+  const displayDescription = (description ?? defaultDescription).trim() || defaultDescription;
+
   return (
     <section className="relative w-full overflow-hidden bg-slate-200">
-      <div className="relative aspect-[21/9] w-full min-h-[280px] md:min-h-[360px]">
+      <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] w-full min-h-[300px] sm:min-h-[280px] md:min-h-[360px]">
         <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-100 via-primary-50 to-slate-100">
           <motion.div
-            className="text-center px-6 max-w-4xl mx-auto"
+            className="text-center px-4 sm:px-6 max-w-4xl mx-auto w-full"
             variants={container}
             initial="hidden"
             animate="visible"
           >
             <motion.h1
               variants={item}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-800 tracking-tight"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-slate-800 tracking-tight"
             >
-              ASIAN ACADEMY
+              {displayHeadline}
             </motion.h1>
             <motion.p
               variants={item}
-              className="mt-3 md:mt-4 text-sm md:text-base font-medium text-primary-600 uppercase tracking-[0.2em]"
+              className="mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm md:text-base font-medium text-primary-600 uppercase tracking-[0.1em] sm:tracking-[0.2em]"
             >
-              For Peace Research and Development
+              {displayTagline}
             </motion.p>
             <motion.p
               variants={item}
-              className="mt-5 md:mt-6 max-w-xl mx-auto text-slate-600 text-sm md:text-base leading-relaxed"
+              className="mt-4 sm:mt-5 md:mt-6 max-w-xl mx-auto text-slate-600 text-sm md:text-base leading-relaxed px-1"
             >
-              Building capacity for peacebuilding, research, and sustainable development across Nepal and the region.
+              {displayDescription}
             </motion.p>
             <motion.div
               variants={scrollHint}
-              className="mt-10 md:mt-14 flex flex-col items-center gap-2"
+              className="mt-8 sm:mt-10 md:mt-14 flex flex-col items-center gap-2"
             >
               <span className="text-xs uppercase tracking-widest text-slate-500">Scroll to know more</span>
               <motion.span
@@ -96,7 +110,7 @@ export function Hero() {
         <button
           type="button"
           onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md hover:bg-white transition-colors"
+          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md hover:bg-white transition-colors touch-manipulation"
           aria-label="Previous slide"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -106,7 +120,7 @@ export function Hero() {
         <button
           type="button"
           onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md hover:bg-white transition-colors"
+          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md hover:bg-white transition-colors touch-manipulation"
           aria-label="Next slide"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -114,14 +128,14 @@ export function Hero() {
           </svg>
         </button>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
           {Array.from({ length: slideCount }).map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setCurrent(i)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                i === current ? "bg-primary-600 w-6" : "bg-white/70 hover:bg-white"
+              className={`h-2.5 w-2.5 sm:h-2 sm:w-2 rounded-full transition-all duration-300 touch-manipulation ${
+                i === current ? "bg-primary-600 w-6 sm:w-6" : "bg-white/70 hover:bg-white"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />

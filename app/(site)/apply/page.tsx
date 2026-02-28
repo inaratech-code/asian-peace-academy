@@ -41,14 +41,14 @@ export default function ApplyPage() {
 
   return (
     <main>
-      <section className="relative py-20 md:py-28 overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-soft-blue/20 to-primary-100/10" aria-hidden />
-        <div className="relative mx-auto max-w-6xl px-6 md:px-8">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8">
           <AnimatedReveal>
-            <h1 className="text-4xl font-semibold text-slate-900 md:text-5xl">
+            <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl md:text-5xl">
               Apply
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-slate-600">
+            <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-slate-600">
               Start your application to one of our programs. You can save and return later.
             </p>
           </AnimatedReveal>

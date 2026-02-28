@@ -1,4 +1,4 @@
-import { readJsonFile } from "@/lib/fileHandler";
+import { readJsonFileSafe } from "@/lib/fileHandler";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -11,8 +11,13 @@ interface BlogPost {
   content: string;
 }
 
+async function getPosts() {
+  const data = await readJsonFileSafe<{ posts?: BlogPost[] }>("blog.json", { posts: [] });
+  return Array.isArray(data.posts) ? data.posts : [];
+}
+
 export async function generateStaticParams() {
-  const { posts } = await readJsonFile<{ posts: BlogPost[] }>("blog.json");
+  const posts = await getPosts();
   return posts.map((p) => ({ slug: p.slug }));
 }
 
@@ -22,7 +27,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const { posts } = await readJsonFile<{ posts: BlogPost[] }>("blog.json");
+  const posts = await getPosts();
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Post not found" };
   return {
@@ -37,13 +42,13 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { posts } = await readJsonFile<{ posts: BlogPost[] }>("blog.json");
+  const posts = await getPosts();
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
   return (
     <main>
-      <article className="mx-auto max-w-4xl px-6 py-12 md:px-8">
+      <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-12 md:px-8">
         <p className="text-sm font-medium text-slate-500 mb-4">
           <Link href="/" className="hover:text-primary-600">Blog</Link>
         </p>

@@ -10,30 +10,30 @@ export function Footer() {
 
   return (
     <footer className="border-t border-slate-200 bg-[#f0f4f8]">
-      <div className="mx-auto max-w-7xl px-4 py-10 md:px-6">
-        <div>
-          <p className="text-lg font-bold text-slate-800">ASIAN ACADEMY</p>
-          <p className="text-xs font-medium text-primary-500 uppercase tracking-wider mt-0.5">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10 md:px-6">
+        <div className="min-w-0">
+          <p className="text-base sm:text-lg font-bold text-slate-800">ASIAN ACADEMY</p>
+          <p className="text-[11px] sm:text-xs font-medium text-primary-500 uppercase tracking-wider mt-0.5">
             For Peace Research and Development
           </p>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-2 text-sm text-slate-600 break-words">
             Thapa Gaun, New Baneshwor, Kathmandu, Nepal
           </p>
-          <p className="text-sm text-slate-600">
+          <p className="mt-1 text-sm text-slate-600 break-all">
             <a href="mailto:asianacademy11@gmail.com" className="hover:text-primary-600">asianacademy11@gmail.com</a>
             {" · "}
             <a href="tel:+97715244060" className="hover:text-primary-600">+977-1-5244060</a>
           </p>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3 justify-end">
+        <div className="mt-6 flex flex-wrap gap-3 justify-center sm:justify-end">
           {socialLinks.map((s) => (
             <a
               key={s.label}
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-slate-300 bg-white text-slate-600 hover:border-primary-400 hover:text-primary-600 transition-colors"
+              className="flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-lg border-2 border-slate-300 bg-white text-slate-600 hover:border-primary-400 hover:text-primary-600 transition-colors touch-manipulation"
               aria-label={s.label}
             >
               <span className="sr-only">{s.label}</span>

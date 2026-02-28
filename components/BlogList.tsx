@@ -12,7 +12,7 @@ interface Post {
 
 export function BlogList({ posts }: { posts: Post[] }) {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-12 md:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-12 md:px-8">
       <ScrollReveal>
         <h2 className="text-2xl font-semibold text-primary-800 mb-8">Blog</h2>
       </ScrollReveal>

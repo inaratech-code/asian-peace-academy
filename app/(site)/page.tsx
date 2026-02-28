@@ -1,4 +1,4 @@
-import { readJsonFile } from "@/lib/fileHandler";
+import { readJsonFileSafe } from "@/lib/fileHandler";
 import { Hero } from "@/components/Hero";
 import { HomeUpdates } from "@/components/HomeUpdates";
 
@@ -9,12 +9,28 @@ interface BlogPost {
   excerpt: string;
 }
 
+interface ContentData {
+  hero?: {
+    headline?: string;
+    subtitle?: string;
+    primaryCta?: string;
+    secondaryCta?: string;
+  };
+}
+
 export default async function HomePage() {
-  const { posts } = await readJsonFile<{ posts: BlogPost[] }>("blog.json");
+  const blogData = await readJsonFileSafe<{ posts?: BlogPost[] }>("blog.json", { posts: [] });
+  const posts = Array.isArray(blogData.posts) ? blogData.posts : [];
+
+  const contentData = await readJsonFileSafe<ContentData>("content.json", {});
+  const hero = contentData.hero;
 
   return (
     <>
-      <Hero />
+      <Hero
+        headline={hero?.headline}
+        tagline={hero?.subtitle}
+      />
 
       <main>
         <HomeUpdates posts={posts} />
