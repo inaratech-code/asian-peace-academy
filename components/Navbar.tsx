@@ -7,11 +7,25 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks: { href: string; label: string; children?: { href: string; label: string }[] }[] = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About", children: [{ href: "/about", label: "About Us" }, { href: "/about#team", label: "Team" }] },
+  {
+    href: "/about",
+    label: "About",
+    children: [
+      { href: "/about", label: "About Us" },
+      { href: "/about/mission-vision", label: "Mission / Vision" },
+      { href: "/about/board", label: "Board Of Directors" },
+      { href: "/about/advisor", label: "Advisor" },
+      { href: "/about/team", label: "Team Of Expert" },
+      { href: "/about/staff", label: "Our Staff" },
+      { href: "/about/partners", label: "Strategic Partners" },
+      { href: "/about/collaborators", label: "Collaborators" },
+    ],
+  },
   { href: "/programs", label: "Expertise & Services", children: [{ href: "/programs", label: "Our Programs" }, { href: "/apply", label: "Apply" }] },
   { href: "/blog", label: "Updates", children: [{ href: "/blog", label: "Blog" }, { href: "/", label: "News" }] },
-  { href: "/gallery", label: "Gallery", children: [{ href: "/gallery", label: "Photo Gallery" }] },
-  { href: "/contact", label: "Contact", children: [{ href: "/contact", label: "Contact Us" }, { href: "/contact", label: "Location" }] },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
 ];
 
 function isActive(pathname: string, href: string, children?: { href: string }[]) {
@@ -95,8 +109,8 @@ export function Navbar() {
                   href={link.href}
                   className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     active
-                      ? "bg-[#e8eef4] text-slate-800"
-                      : "text-slate-700 hover:bg-slate-50 hover:text-primary-600"
+                      ? "bg-primary-100 text-primary-800 border-b-2 border-primary-500 shadow-sm"
+                      : "text-slate-700 hover:bg-slate-100 hover:text-primary-700 border-b-2 border-transparent"
                   }`}
                 >
                   {link.label}
@@ -108,12 +122,12 @@ export function Navbar() {
                 </Link>
                 {link.children && link.children.length > 0 && (
                   <div className="invisible group-hover:visible absolute left-0 top-full z-50 min-w-[180px] pt-1">
-                    <div className="rounded-md border border-slate-200 bg-white py-1 shadow-lg">
+                    <div className="rounded-md border-2 border-slate-200 bg-white py-1 shadow-xl">
                       {link.children.map((child) => (
                         <Link
                           key={child.href + child.label}
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary-600"
+                          className="block px-4 py-2.5 text-sm font-medium text-slate-800 hover:bg-primary-50 hover:text-primary-800 border-l-2 border-transparent hover:border-primary-400"
                         >
                           {child.label}
                         </Link>
@@ -158,8 +172,8 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block py-2.5 px-3 text-base font-medium rounded-lg ${
-                      pathname === link.href ? "bg-[#e8eef4] text-slate-800" : "text-slate-700 hover:bg-slate-50"
+                    className={`block py-2.5 px-3 text-base font-medium rounded-lg border-l-4 ${
+                      pathname === link.href ? "bg-primary-100 text-primary-900 border-primary-500" : "text-slate-700 hover:bg-slate-100 border-transparent"
                     }`}
                   >
                     {link.label}
@@ -171,7 +185,7 @@ export function Navbar() {
                           <Link
                             href={child.href}
                             onClick={() => setMobileOpen(false)}
-                            className="block py-1.5 px-2 text-sm text-slate-600 hover:text-primary-600"
+                            className="block py-1.5 px-2 text-sm font-medium text-slate-700 hover:text-primary-700 hover:bg-primary-50/50 rounded"
                           >
                             {child.label}
                           </Link>

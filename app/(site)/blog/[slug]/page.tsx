@@ -55,7 +55,7 @@ export default async function BlogPostPage({
 
         <h1 className="text-2xl font-semibold text-primary-800 mb-6">{post.title}</h1>
 
-        <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed">
+        <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed text-justify">
           {post.content.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}

@@ -26,10 +26,10 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
             <Link
               key={link.href}
               href={link.href}
-              className={`block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+              className={`block rounded-lg px-4 py-2.5 text-sm font-medium transition-colors border-l-4 ${
                 pathname === link.href
-                  ? "bg-primary-50 text-primary-700"
-                  : "text-slate-600 hover:bg-slate-100"
+                  ? "bg-primary-100 text-primary-800 border-primary-500 shadow-sm"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-transparent"
               }`}
             >
               {link.label}

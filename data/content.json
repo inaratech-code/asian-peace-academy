@@ -11,7 +11,11 @@
     "ctaText": "Learn More About Us"
   },
   "about": {
-    "intro": "The organisation is govern by a eleven members board of directors, all of them have distinguished and accomplished career history in terms of contributing to social wellbeing in the country. The day to day function of the organization is managed by a full-time executive director who directly reports to the board. An advisory committee which is consisted of national and international experts in the field of peacebuilding and development provide necessary advice to the executive board, particularly in developing organisational strategy and plans to translate the strategies into action.",
+    "sectionTitle": "Who we are",
+    "orgName": "Asian Academy for Peace, Research and Development",
+    "intro": "Asian Academy for Peace, Research and Development, a non-profit organization, is desirous to see 'All Human beings live in harmony and peace with dignity thereby enjoying potential to growth and development in a sustainable manner', and aiming at to promote quality services though knowledge generation, capacity building, linking practice, policy, and academia.",
+    "intro2": "Asian Peace Academy works with and for Peacebuilding and development organizations in Kathmandu and abroad to identify local Peacebuilding and development needs; to support and accompany with relevant institutions and stakeholders for developing local capacities. Developing capacity is a key in achieving its vision and mission, therefore, Asian Peace Academy engages in capacity development of local peace and development actors, particularly from youth, women and marginalized groups. Civil society organizations and local government actors are also encouraged and accompanied with.",
+    "keyAreasHeading": "Key areas of Asian Peace Academy involve",
     "pillars": [
       {
         "title": "Knowledge Generation",

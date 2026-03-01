@@ -1,11 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 
-const slideCount = 3;
-
-/** Cubic bezier tuple for Framer Motion ease (avoids number[] inference) */
 const easeOutExpo: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const container = {
@@ -48,15 +44,6 @@ interface HeroProps {
 }
 
 export function Hero({ headline, tagline, description }: HeroProps = {}) {
-  const [current, setCurrent] = useState(0);
-
-  function next() {
-    setCurrent((c) => (c + 1) % slideCount);
-  }
-  function prev() {
-    setCurrent((c) => (c - 1 + slideCount) % slideCount);
-  }
-
   const displayHeadline = (headline ?? defaultHeadline).trim() || defaultHeadline;
   const displayTagline = (tagline ?? defaultTagline).trim() || defaultTagline;
   const displayDescription = (description ?? defaultDescription).trim() || defaultDescription;
@@ -105,41 +92,6 @@ export function Hero({ headline, tagline, description }: HeroProps = {}) {
               </motion.span>
             </motion.div>
           </motion.div>
-        </div>
-
-        <button
-          type="button"
-          onClick={prev}
-          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md hover:bg-white transition-colors touch-manipulation"
-          aria-label="Previous slide"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <button
-          type="button"
-          onClick={next}
-          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-10 flex h-11 w-11 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-md hover:bg-white transition-colors touch-manipulation"
-          aria-label="Next slide"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-          {Array.from({ length: slideCount }).map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setCurrent(i)}
-              className={`h-2.5 w-2.5 sm:h-2 sm:w-2 rounded-full transition-all duration-300 touch-manipulation ${
-                i === current ? "bg-primary-600 w-6 sm:w-6" : "bg-white/70 hover:bg-white"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>
