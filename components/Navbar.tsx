@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -88,15 +89,16 @@ export function Navbar() {
 
       {/* Main navigation */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
-          <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-primary-500 text-white text-lg sm:text-xl font-bold">
-            A
-          </div>
-          <div className="min-w-0">
-            <span className="block text-base sm:text-lg font-bold tracking-tight text-slate-800 truncate">ASIAN ACADEMY</span>
-            <span className="block text-[11px] sm:text-xs font-medium text-primary-500 uppercase tracking-wide sm:tracking-wider break-words">
-              For Peace Research and Development
-            </span>
+        <Link href="/" className="flex items-center min-w-0 shrink">
+          <div className="flex h-16 w-64 sm:h-20 sm:w-96 md:h-24 md:w-[28rem] shrink-0 items-center">
+            <Image
+              src="/images/Asian%20Academy.png"
+              alt="Asian Academy logo"
+              width={1024}
+              height={256}
+              className="h-full w-full object-contain"
+              priority
+            />
           </div>
         </Link>
 
