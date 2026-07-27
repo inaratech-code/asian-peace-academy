@@ -15,7 +15,7 @@ A premium academy website built with Next.js 14 (App Router), TypeScript, Tailwi
    Copy `.env.example` to `.env.local` and set:
 
    - `ADMIN_USERNAME` – admin login username (default: admin)
-   - `ADMIN_PASSWORD` – admin login password (default: admin123)
+   - `ADMIN_PASSWORD` – admin login password (default: ********)
    - `JWT_SECRET` – secret for JWT signing (use a long random string in production)
 
 3. **Run development server**
